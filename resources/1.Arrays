@@ -1,0 +1,5 @@
+Fetching element in array is 
+	O(1) (if index is known) -> constant -> 1. go to start index of array. 2. index*(size of object). 3. start of array + multiplication result 
+	O(n) (if index is not known)
+
+	
