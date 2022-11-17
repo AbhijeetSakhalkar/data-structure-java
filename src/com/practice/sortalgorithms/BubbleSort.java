@@ -7,9 +7,14 @@ public class BubbleSort {
 	public static void main(String[] args) {
 		
 		int [] array = {3,1,5,1,-1,-3,0};
+		System.out.println("Bubble Sort:");
 		System.out.println(Arrays.toString(sort(array)));
 	}
-
+	
+	
+	/*
+	 * Bubble up the largest element
+	 */
 	private static int [] sort(int [] array) {
 		int last = array.length-1;
 		for(int j=last ; j>0 ; j--) {
