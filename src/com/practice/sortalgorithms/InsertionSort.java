@@ -2,43 +2,37 @@ package com.practice.sortalgorithms;
 
 import java.util.Arrays;
 
-public class SelectionSort {
+public class InsertionSort {
 
 	public static void main(String[] args) {
 		int [] array = getRandomArrayOfLength(10000);
 		//System.out.println(Arrays.toString(array));
-		System.out.println("Selection Sort:");
+		System.out.println("Insertion Sort:");
 		sort(array);
 
 	}
-	
+
 	/*
-	 * Select the largest element and put it at the last unsorted index
+	 * Keep sorted array at left side. pick element and place at the perfect sorted position.
 	 */
 	private static int [] sort(int [] array) {
 		long start = System.currentTimeMillis();
-		for(int lastUnsortedIndex=array.length-1;lastUnsortedIndex>0;lastUnsortedIndex--) {
-			int largestIndex=0;
-			for(int i=1;i<=lastUnsortedIndex;i++) {
-				if(array[largestIndex] < array[i]) {
-					largestIndex=i;
+		for(int firstUnsortedIndex = 1 ; firstUnsortedIndex < array.length ; firstUnsortedIndex ++) {
+			for(int i = firstUnsortedIndex ; i>0 ; i--) {
+				if(array[i] < array[i-1]) {
+					int tmp = array[i];
+					array[i] = array[i-1];
+					array[i-1] = tmp;
+				}
+				else {
+					continue;
 				}
 			}
-			swap(array, largestIndex, lastUnsortedIndex);
 		}
 		System.out.println("Total time in ms: " + (System.currentTimeMillis() - start));
 		return array;
 	}
 	
-	private static void swap (int [] array, int i, int j) {
-		if(i==j) {
-			return;
-		}
-		int temp = array[i];
-		array[i] = array[j];
-		array[j] = temp;
-	}
-
 	public static int [] getRandomArrayOfLength(int length) {
 		int array [] = new int[length];
 		for(int i=0;i<length;i++) {
@@ -46,5 +40,4 @@ public class SelectionSort {
 		}
 		return array;
 	}
-	
 }
