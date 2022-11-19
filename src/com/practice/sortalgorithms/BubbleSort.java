@@ -2,11 +2,13 @@ package com.practice.sortalgorithms;
 
 import java.util.Arrays;
 
+import com.practice.utils.ArrayUtils;
+
 public class BubbleSort {
 
 	public static void main(String[] args) {
 		
-		int [] array = getRandomArrayOfLength(10000);
+		int [] array = ArrayUtils.getRandomArrayOfLength(10000);
 		//System.out.println(Arrays.toString(array));
 		System.out.println("Bubble Sort:");
 		sort(array);
@@ -29,13 +31,6 @@ public class BubbleSort {
 			}
 		}
 		System.out.println("Total time in ms: " + (System.currentTimeMillis() - start));
-		return array;
-	}
-	public static int [] getRandomArrayOfLength(int length) {
-		int array [] = new int[length];
-		for(int i=0;i<length;i++) {
-			array[i] = (int)(Math.random() * 1000);
-		}
 		return array;
 	}
 }
