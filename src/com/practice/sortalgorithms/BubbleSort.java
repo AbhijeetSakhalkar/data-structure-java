@@ -8,10 +8,10 @@ public class BubbleSort {
 
 	public static void main(String[] args) {
 		
-		int [] array = ArrayUtils.getRandomArrayOfLength(10000);
-		//System.out.println(Arrays.toString(array));
+		int [] array = ArrayUtils.getRandomArrayOfLength(10);
 		System.out.println("Bubble Sort:");
 		sort(array);
+		System.out.println(Arrays.toString(array));
 	}
 	
 	
@@ -19,7 +19,6 @@ public class BubbleSort {
 	 * Bubble up the largest element
 	 */
 	private static int [] sort(int [] array) {
-		long start = System.currentTimeMillis();
 		int last = array.length-1;
 		for(int j=last ; j>0 ; j--) {
 			for(int i=0; i<j;i++) {
@@ -30,7 +29,6 @@ public class BubbleSort {
 				}
 			}
 		}
-		System.out.println("Total time in ms: " + (System.currentTimeMillis() - start));
 		return array;
 	}
 }

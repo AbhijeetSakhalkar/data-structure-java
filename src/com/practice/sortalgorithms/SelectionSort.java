@@ -7,18 +7,16 @@ import com.practice.utils.ArrayUtils;
 public class SelectionSort {
 
 	public static void main(String[] args) {
-		int [] array =ArrayUtils.getRandomArrayOfLength(10000);
-		//System.out.println(Arrays.toString(array));
+		int [] array =ArrayUtils.getRandomArrayOfLength(10);
 		System.out.println("Selection Sort:");
 		sort(array);
-
+		System.out.println(Arrays.toString(array));
 	}
 	
 	/*
 	 * Select the largest element and put it at the last unsorted index
 	 */
 	private static int [] sort(int [] array) {
-		long start = System.currentTimeMillis();
 		for(int lastUnsortedIndex=array.length-1;lastUnsortedIndex>0;lastUnsortedIndex--) {
 			int largestIndex=0;
 			for(int i=1;i<=lastUnsortedIndex;i++) {
@@ -28,7 +26,6 @@ public class SelectionSort {
 			}
 			swap(array, largestIndex, lastUnsortedIndex);
 		}
-		System.out.println("Total time in ms: " + (System.currentTimeMillis() - start));
 		return array;
 	}
 	
