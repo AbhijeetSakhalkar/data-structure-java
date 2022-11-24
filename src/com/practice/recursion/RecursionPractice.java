@@ -1,4 +1,4 @@
-package com.practice.temp;
+package com.practice.recursion;
 
 public class RecursionPractice {
 
